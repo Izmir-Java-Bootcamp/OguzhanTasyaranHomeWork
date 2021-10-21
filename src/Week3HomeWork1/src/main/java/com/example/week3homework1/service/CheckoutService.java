@@ -1,10 +1,12 @@
 package com.example.week3homework1.service;
 
 import java.util.Map;
+
 import com.example.week3homework1.model.Cart;
 import com.example.week3homework1.model.PaymentType;
 import com.example.week3homework1.model.Product;
 import com.example.week3homework1.model.ProductAdditionRequest;
+import lombok.var;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -65,3 +67,4 @@ public class CheckoutService {
         return "Your order successfully processed and %" + creditCardCommission + " is taken.";
 
     }
+}
