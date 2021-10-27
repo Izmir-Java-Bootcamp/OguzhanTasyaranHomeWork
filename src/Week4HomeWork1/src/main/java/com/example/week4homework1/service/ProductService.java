@@ -16,7 +16,9 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class ProductService {
+
     private final ProductRepository productRepository;
+
     private final CategoryRepository categoryRepository;
 
     public List<Product> getProductList(Long id) throws CategoryNotExistsException {
@@ -51,6 +53,4 @@ public class ProductService {
         product.setPrice(productUpdateRequest.getPrice());
         productRepository.save(product);
     }
-
-
 }

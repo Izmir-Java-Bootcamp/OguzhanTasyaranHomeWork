@@ -1,9 +1,6 @@
 package com.example.week4homework1.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,16 +9,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Data
+@Getter
+@Setter
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "category_id", nullable = false)
     private Long categoryId;
 
-    @Column(name = "parent_category", nullable = false)
+    @Column(name="parent_category", nullable = false)
     private String parentCategory;
 
-    @Column(name = "sub_category")
+    @Column(name="sub_category")
     private String subCategory;
 }

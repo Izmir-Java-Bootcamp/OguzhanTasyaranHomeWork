@@ -1,19 +1,17 @@
 package com.example.week4homework1.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.apache.catalina.User;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "basket")
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class Basket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

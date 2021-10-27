@@ -5,14 +5,13 @@ import com.example.week4homework1.model.UserCreateRequest;
 import com.example.week4homework1.model.UserUpdateRequest;
 import com.example.week4homework1.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-
 public class UserService {
+
     private final UserRepository userRepository;
 
     public void createUser(UserCreateRequest userCreateRequest) {
@@ -33,4 +32,3 @@ public class UserService {
         userRepository.save(user);
     }
 }
-

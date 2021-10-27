@@ -12,13 +12,13 @@ import javax.persistence.Table;
 
 import lombok.*;
 
-@Data
 @Entity
 @Table(name = "product")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-
+@Getter
+@Setter
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,4 +38,5 @@ public class Product {
 
     @Column(name = "price")
     private Double price;
+
 }
