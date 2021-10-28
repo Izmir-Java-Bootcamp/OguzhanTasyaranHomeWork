@@ -27,7 +27,10 @@ public class BasketService {
     public void updateProduct(ProductAddRemoveRequest request) {
         int quantity = Math.max(request.getQuantity(), 0);
         if (quantity == 0) {
-            basketProductRepository.deleteByBasketIdAndProductId(request.getBasketId(), request.getProductId());
+            basketProductRepository.deleteByBasketAndProduct(
+                    basketRepository.getById(request.getBasketId()),
+                    productRepository.getById(request.getProductId())
+            );
         } else {
             basketProductRepository.save(
                     new BasketProducts(

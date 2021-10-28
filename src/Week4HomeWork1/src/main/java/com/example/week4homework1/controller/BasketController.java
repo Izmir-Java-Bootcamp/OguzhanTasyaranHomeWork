@@ -19,12 +19,12 @@ public class BasketController {
     private final BasketService basketService;
 
     @GetMapping("/{id}")
-    public Basket getUserBasket(@PathVariable Long id) {
+    public Basket getUserBasket(@PathVariable Long id){
         return basketService.getUserBasket(id);
     }
 
     @PostMapping
-    public void updateProduct(@RequestBody ProductAddRemoveRequest request) {
+    public void updateProduct(@RequestBody ProductAddRemoveRequest request){
         basketService.updateProduct(request);
     }
 

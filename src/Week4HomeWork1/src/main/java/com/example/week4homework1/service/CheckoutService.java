@@ -30,7 +30,7 @@ public class CheckoutService {
                 null, userRepository.getById(userId)
         ));
 
-        List<BasketProducts> basketProducts = basketProductRepository.findAllByBasketId(basketId);
+        List<BasketProducts> basketProducts = basketProductRepository.findAllByBasket(basketRepository.getById(basketId));
         basketProducts.forEach(it -> orderedProductsRepository.save(new OrderedProducts(null, order, it.getProduct(), it.getQuantity())));
     }
 }
